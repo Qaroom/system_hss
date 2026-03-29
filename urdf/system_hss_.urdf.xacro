@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="system_hss">
+  <xacro:arg name="prefix" default="" />
+  <xacro:arg name="use_gazebo" default="false" />
+
+  <!-- Import system_hss macro -->
+  <xacro:include filename="$(find system_hss)/urdf/system_hss.urdf.xacro" />
+
+  <!-- Import system_hss ros2_control description -->
+  <xacro:include filename="$(find system_hss)/ros2_control/system_hss.ros2_control.xacro" />
+
+  <xacro:system_hss_ros2_control
+    name="system_hss" prefix="$(arg prefix)" use_gazebo="$(arg use_gazebo)"/>
+
+  <xacro:if value="$(arg use_gazebo)">
+    <!-- Import Gazebo Classic definitions + plugin -->
+    <xacro:include filename="$(find system_hss)/gazebo/system_hss.gazebo.xacro" />
+    <xacro:system_hss_gazebo prefix="$(arg prefix)"/>
+  </xacro:if>
+</robot>

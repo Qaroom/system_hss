@@ -1,0 +1,274 @@
+<sdf version='1.11'>
+  <model name='system_hss'>
+    <link name='base_lift_link'>
+      <inertial>
+        <pose>-0.029770999999999999 -0.018935 0.062667 0 0 0</pose>
+        <mass>1.0130999999999999</mass>
+        <inertia>
+          <ixx>0.010978</ixx>
+          <ixy>8.9410999999975892e-08</ixy>
+          <ixz>6.4889999998752473e-09</ixz>
+          <iyy>0.011165</iyy>
+          <iyz>7.7505999999999972e-05</iyz>
+          <izz>0.020028000000000001</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_lift_link_fixed_joint_lump__base_link_collision'>
+        <pose>0 0 0.070000000000000007 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///home/ros2/Desktop/ros_ws/src/system_hss/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='base_lift_link_fixed_joint_lump__base_link_visual'>
+        <pose>0 0 0.070000000000000007 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///home/ros2/Desktop/ros_ws/src/system_hss/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='base_support_joint' type='revolute'>
+      <pose relative_to='base_lift_link'>-0.029770999999999999 -0.028615000000000002 0.098504000000000008 0 0 0</pose>
+      <parent>base_lift_link</parent>
+      <child>support_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-3.1415000000000002</lower>
+          <upper>3.1415000000000002</upper>
+          <effort>40</effort>
+          <velocity>7</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='support_link'>
+      <pose relative_to='base_support_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>-0.00049182000000000002 1.8478000000000002e-05 0.069720000000000004 0 0 0</pose>
+        <mass>0.50983999999999996</mass>
+        <inertia>
+          <ixx>0.0024689999999999998</ixx>
+          <ixy>-2.8776999999999999e-07</ixy>
+          <ixz>-3.7348999999999998e-05</ixz>
+          <iyy>0.0032106000000000001</iyy>
+          <iyz>3.2649000000000001e-07</iyz>
+          <izz>0.0016042000000000001</izz>
+        </inertia>
+      </inertial>
+      <collision name='support_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///home/ros2/Desktop/ros_ws/src/system_hss/meshes/support_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='support_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///home/ros2/Desktop/ros_ws/src/system_hss/meshes/support_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='support_right_mil_joint' type='revolute'>
+      <pose relative_to='support_link'>0.025000000000000001 0 0.17999999999999999 -1.5708 -4.2351647362715017e-22 3.1415853071795872</pose>
+      <parent>support_link</parent>
+      <child>right_mil_link</child>
+      <axis>
+        <xyz>-1 0 0</xyz>
+        <limit>
+          <lower>-1.2</lower>
+          <upper>0.52300000000000002</upper>
+          <effort>50</effort>
+          <velocity>3</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.10000000000000001</damping>
+          <friction>0.01</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='right_mil_link'>
+      <pose relative_to='support_right_mil_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.024041288473577869 0.0099028544413601923 -0.0045603063328303771 0 0 0</pose>
+        <mass>0.4808906</mass>
+        <inertia>
+          <ixx>0.0018619123072382989</ixx>
+          <ixy>1.0491344500168579e-06</ixy>
+          <ixz>-2.3476668873473309e-05</ixz>
+          <iyy>0.0020826596018400641</iyy>
+          <iyz>-1.1185111207538939e-05</iyz>
+          <izz>0.00052471487075757012</izz>
+        </inertia>
+      </inertial>
+      <collision name='right_mil_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///home/ros2/Desktop/ros_ws/src/system_hss/meshes/right_mil_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='right_mil_link_fixed_joint_lump__gun_base_link_collision_1'>
+        <pose>0 0 0 -1.5707999999999998 -0.08726600000000001 -3.1415853071795872</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///home/ros2/Desktop/ros_ws/src/system_hss/meshes/gun_base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='right_mil_link_fixed_joint_lump__camera_link_collision_2'>
+        <pose>0.030470155897680779 0.01455384209035245 0.1016612567893006 -0.00619998602031532 3.9923626394225413e-09 -3.1404944273188198</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///home/ros2/Desktop/ros_ws/src/system_hss/meshes/camera_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='right_mil_link_fixed_joint_lump__left_mil_link_collision_3'>
+        <pose>0.050000265206460788 3.5131536545857101e-07 1.2839162577289041e-08 1.3977506372580226e-08 -5.8573811155222844e-13 -3.141585627318813</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///home/ros2/Desktop/ros_ws/src/system_hss/meshes/left_mil_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='right_mil_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///home/ros2/Desktop/ros_ws/src/system_hss/meshes/right_mil_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+      <visual name='right_mil_link_fixed_joint_lump__gun_base_link_visual_1'>
+        <pose>0 0 0 -1.5707999999999998 -0.08726600000000001 -3.1415853071795872</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///home/ros2/Desktop/ros_ws/src/system_hss/meshes/gun_base_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+      <visual name='right_mil_link_fixed_joint_lump__camera_link_visual_2'>
+        <pose>0.030470155897680779 0.01455384209035245 0.1016612567893006 -0.00619998602031532 3.9923626394225413e-09 -3.1404944273188198</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///home/ros2/Desktop/ros_ws/src/system_hss/meshes/camera_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+      <visual name='right_mil_link_fixed_joint_lump__left_mil_link_visual_3'>
+        <pose>0.050000265206460788 3.5131536545857101e-07 1.2839162577289041e-08 1.3977506372580226e-08 -5.8573811155222844e-13 -3.141585627318813</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///home/ros2/Desktop/ros_ws/src/system_hss/meshes/left_mil_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+      <sensor name='camera' type='camera'>
+        <always_on>true</always_on>
+        <update_rate>10</update_rate>
+        <visualize>true</visualize>
+        <camera>
+          <horizontal_fov>1.0469999999999999</horizontal_fov>
+          <image>
+            <width>640</width>
+            <height>480</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.10000000000000001</near>
+            <far>100</far>
+          </clip>
+        </camera>
+        <plugin name='gz::sim::systems::Sensors' filename='gz-sim-sensors-system'/>
+        <topic>camera/image</topic>
+        <pose>-0.0195298 0.0144989 0.101661 -1.5715099999999962 1.5646000000000155 1.5711799999999927</pose>
+      </sensor>
+    </link>
+    <plugin name='gz::sim::systems::JointController' filename='gz-sim-joint-controller-system'>
+      <command_type>position</command_type>
+      <joint_name>base_support_joint</joint_name>
+      <joint_name>support_right_mil_joint</joint_name>
+      <topic>arm_cmd</topic>
+    </plugin>
+    <frame name='base_lift_joint' attached_to='base_lift_link'>
+      <pose>0 0 0.070000000000000007 0 0 0</pose>
+    </frame>
+    <frame name='base_link' attached_to='base_lift_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='camera_joint' attached_to='camera_link'>
+      <pose>0.050000000000000003 0 0 3.1415926535897931 1.5707926536359933 3.1415926535897931</pose>
+    </frame>
+    <frame name='camera_spin_link' attached_to='camera_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='gun_base_camera_joint' attached_to='gun_base_link'>
+      <pose>-0.021493999999999999 -0.10392999999999999 -0.014553999999999999 1.5646000000000002 -0.0010912000000000159 0.08726600000000001</pose>
+    </frame>
+    <frame name='camera_link' attached_to='gun_base_camera_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='gun_base_left_mil_joint' attached_to='gun_base_link'>
+      <pose>-0.04981 -0.0043578000000000002 0 1.5708 -1.3877787807814457e-17 0.087265999999999969</pose>
+    </frame>
+    <frame name='left_mil_link' attached_to='gun_base_left_mil_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='right_mil_gun_base_joint' attached_to='right_mil_link'>
+      <pose>0 0 0 -1.5707999999999998 -0.08726600000000001 -3.1415853071795872</pose>
+    </frame>
+    <frame name='gun_base_link' attached_to='right_mil_gun_base_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+  </model>
+</sdf>

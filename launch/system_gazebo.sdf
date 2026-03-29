@@ -1,0 +1,389 @@
+<sdf version='1.10'>
+  <world name='empty'>
+    <physics name='1ms' type='ignored'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    <plugin name='gz::sim::systems::Physics' filename='gz-sim-physics-system'/>
+    <plugin name='gz::sim::systems::UserCommands' filename='gz-sim-user-commands-system'/>
+    <plugin name='gz::sim::systems::SceneBroadcaster' filename='gz-sim-scene-broadcaster-system'/>
+    <plugin name='gz::sim::systems::Contact' filename='gz-sim-contact-system'/>
+    <gravity>0 0 -9.8000000000000007</gravity>
+    <magnetic_field>5.5644999999999998e-06 2.2875799999999999e-05 -4.2388400000000002e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <scene>
+      <ambient>0.400000006 0.400000006 0.400000006 1</ambient>
+      <background>0.699999988 0.699999988 0.699999988 1</background>
+      <shadows>true</shadows>
+    </scene>
+    <model name='ground_plane'>
+      <static>true</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <ambient>0.800000012 0.800000012 0.800000012 1</ambient>
+            <diffuse>0.800000012 0.800000012 0.800000012 1</diffuse>
+            <specular>0.800000012 0.800000012 0.800000012 1</specular>
+          </material>
+        </visual>
+        <pose>0 0 0 0 0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>0 0 0 0 0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='system_gazebo'>
+      <link name='base_lift_link'>
+        <inertial>
+          <pose>-0.011113159025243289 0.15006090024330879 0.014598822526444221 0 0 0</pose>
+          <mass>105.21599999999999</mass>
+          <inertia>
+            <ixx>491.42394299391083</ixx>
+            <ixy>3.8621411405053698</ixy>
+            <ixz>0.44894822772935511</ixz>
+            <iyy>1642.9654253731401</iyy>
+            <iyz>-4.6550775151691512</iyz>
+            <izz>2121.1459359206428</izz>
+          </inertia>
+        </inertial>
+        <collision name='base_lift_link_collision_collision'>
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>8 8 0.10000000000000001</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <collision name='base_lift_link_fixed_joint_lump__base_link_collision_1'>
+          <pose>-1.5 3 1 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>file:///home/ros2/Desktop/gazebo_world/meshes/base_link.STL</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <collision name='base_lift_link_fixed_joint_lump__link3_collision_2'>
+          <pose>1.1528 3.3672300000000002 1.7279500000000001 1.5708 0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>file:///home/ros2/Desktop/gazebo_world/meshes/link3.STL</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <collision name='base_lift_link_fixed_joint_lump__link1_collision_3'>
+          <pose>1.1794 3.3672300000000002 0.45024999999999998 1.5708 0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>file:///home/ros2/Desktop/gazebo_world/meshes/link1.STL</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <collision name='base_lift_link_fixed_joint_lump__link2_collision_4'>
+          <pose>0.7027000000000001 3.3672300000000002 1.056597 1.5708 0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>file:///home/ros2/Desktop/gazebo_world/meshes/link2.STL</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <collision name='base_lift_link_fixed_joint_lump__link4_collision_5'>
+          <pose>-0.22859999999999989 3.3672300000000002 1.1444700000000001 1.5708 0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>file:///home/ros2/Desktop/gazebo_world/meshes/link4.STL</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <collision name='base_lift_link_fixed_joint_lump__link5_collision_6'>
+          <pose>-0.38830000000000009 3.3672300000000002 1.7484999999999999 1.5708 0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>file:///home/ros2/Desktop/gazebo_world/meshes/link5.STL</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <collision name='base_lift_link_fixed_joint_lump__link6_collision_7'>
+          <pose>-1.1192599999999999 3.3672300000000002 1.0548850000000001 1.5708 0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>file:///home/ros2/Desktop/gazebo_world/meshes/link6.STL</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <collision name='base_lift_link_fixed_joint_lump__link7_collision_8'>
+          <pose>-1.6266 3.3672300000000002 0.45024999999999998 1.5708 0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>file:///home/ros2/Desktop/gazebo_world/meshes/link7.STL</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <collision name='base_lift_link_fixed_joint_lump__link8_collision_9'>
+          <pose>-1.6532100000000001 3.3672300000000002 1.7279500000000001 1.5708 0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>file:///home/ros2/Desktop/gazebo_world/meshes/link8.STL</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='base_lift_link_visual_visual'>
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>8 8 0.10000000000000001</size>
+            </box>
+          </geometry>
+          <material>
+            <diffuse>0.81249994 0.625 0.487499982 1</diffuse>
+            <ambient>0.81249994 0.625 0.487499982 1</ambient>
+          </material>
+        </visual>
+        <visual name='base_lift_link_fixed_joint_lump__base_link_visual_1'>
+          <pose>-1.5 3 1 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>file:///home/ros2/Desktop/gazebo_world/meshes/base_link.STL</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <diffuse>0.37500003 0.37500003 0.37500003 1</diffuse>
+            <ambient>0.37500003 0.37500003 0.37500003 1</ambient>
+          </material>
+        </visual>
+        <visual name='base_lift_link_fixed_joint_lump__link3_visual_2'>
+          <pose>1.1528 3.3672300000000002 1.7279500000000001 1.5708 0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>file:///home/ros2/Desktop/gazebo_world/meshes/link3.STL</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <diffuse>1 0 0 1</diffuse>
+            <ambient>1 0 0 1</ambient>
+          </material>
+        </visual>
+        <visual name='base_lift_link_fixed_joint_lump__link1_visual_3'>
+          <pose>1.1794 3.3672300000000002 0.45024999999999998 1.5708 0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>file:///home/ros2/Desktop/gazebo_world/meshes/link1.STL</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <diffuse>1 0 0 1</diffuse>
+            <ambient>1 0 0 1</ambient>
+          </material>
+        </visual>
+        <visual name='base_lift_link_fixed_joint_lump__link2_visual_4'>
+          <pose>0.7027000000000001 3.3672300000000002 1.056597 1.5708 0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>file:///home/ros2/Desktop/gazebo_world/meshes/link2.STL</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <diffuse>0 0 1 1</diffuse>
+            <ambient>0 0 1 1</ambient>
+          </material>
+        </visual>
+        <visual name='base_lift_link_fixed_joint_lump__link4_visual_5'>
+          <pose>-0.22859999999999989 3.3672300000000002 1.1444700000000001 1.5708 0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>file:///home/ros2/Desktop/gazebo_world/meshes/link4.STL</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <diffuse>1 0 0 1</diffuse>
+            <ambient>1 0 0 1</ambient>
+          </material>
+        </visual>
+        <visual name='base_lift_link_fixed_joint_lump__link5_visual_6'>
+          <pose>-0.38830000000000009 3.3672300000000002 1.7484999999999999 1.5708 0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>file:///home/ros2/Desktop/gazebo_world/meshes/link5.STL</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <diffuse>0 0 1 1</diffuse>
+            <ambient>0 0 1 1</ambient>
+          </material>
+        </visual>
+        <visual name='base_lift_link_fixed_joint_lump__link6_visual_7'>
+          <pose>-1.1192599999999999 3.3672300000000002 1.0548850000000001 1.5708 0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>file:///home/ros2/Desktop/gazebo_world/meshes/link6.STL</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <diffuse>0 0 1 1</diffuse>
+            <ambient>0 0 1 1</ambient>
+          </material>
+        </visual>
+        <visual name='base_lift_link_fixed_joint_lump__link7_visual_8'>
+          <pose>-1.6266 3.3672300000000002 0.45024999999999998 1.5708 0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>file:///home/ros2/Desktop/gazebo_world/meshes/link7.STL</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <diffuse>1 0 0 1</diffuse>
+            <ambient>1 0 0 1</ambient>
+          </material>
+        </visual>
+        <visual name='base_lift_link_fixed_joint_lump__link8_visual_9'>
+          <pose>-1.6532100000000001 3.3672300000000002 1.7279500000000001 1.5708 0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>file:///home/ros2/Desktop/gazebo_world/meshes/link8.STL</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <diffuse>0 0 1 1</diffuse>
+            <ambient>0 0 1 1</ambient>
+          </material>
+        </visual>
+        <pose>0 0 0 0 0 0</pose>
+        <enable_wind>false</enable_wind>
+      </link>
+      <frame name='join3' attached_to='base_link'>
+        <pose>2.6528 0.36723 0.72794999999999999 1.5708 0 0</pose>
+      </frame>
+      <frame name='link3' attached_to='join3'>
+        <pose>0 0 0 0 0 0</pose>
+      </frame>
+      <frame name='joint1' attached_to='base_link'>
+        <pose>2.6793999999999998 0.36723 -0.54974999999999996 1.5708 0 0</pose>
+      </frame>
+      <frame name='link1' attached_to='joint1'>
+        <pose>0 0 0 0 0 0</pose>
+      </frame>
+      <frame name='joint2' attached_to='base_link'>
+        <pose>2.2027000000000001 0.36723 0.056597000000000001 1.5708 0 0</pose>
+      </frame>
+      <frame name='link2' attached_to='joint2'>
+        <pose>0 0 0 0 0 0</pose>
+      </frame>
+      <frame name='joint4' attached_to='base_link'>
+        <pose>1.2714000000000001 0.36723 0.14446999999999999 1.5708 0 0</pose>
+      </frame>
+      <frame name='link4' attached_to='joint4'>
+        <pose>0 0 0 0 0 0</pose>
+      </frame>
+      <frame name='joint5' attached_to='base_link'>
+        <pose>1.1116999999999999 0.36723 0.74850000000000005 1.5708 0 0</pose>
+      </frame>
+      <frame name='link5' attached_to='joint5'>
+        <pose>0 0 0 0 0 0</pose>
+      </frame>
+      <frame name='joint6' attached_to='base_link'>
+        <pose>0.38074000000000002 0.36723 0.054885000000000003 1.5708 0 0</pose>
+      </frame>
+      <frame name='link6' attached_to='joint6'>
+        <pose>0 0 0 0 0 0</pose>
+      </frame>
+      <frame name='joint7' attached_to='base_link'>
+        <pose>-0.12659999999999999 0.36723 -0.54974999999999996 1.5708 0 0</pose>
+      </frame>
+      <frame name='link7' attached_to='joint7'>
+        <pose>0 0 0 0 0 0</pose>
+      </frame>
+      <frame name='joint8' attached_to='base_link'>
+        <pose>-0.15321000000000001 0.36723 0.72794999999999999 1.5708 0 0</pose>
+      </frame>
+      <frame name='link8' attached_to='joint8'>
+        <pose>0 0 0 0 0 0</pose>
+      </frame>
+      <frame name='base_lift_joint' attached_to='base_lift_link'>
+        <pose>-1.5 3 1 0 0 0</pose>
+      </frame>
+      <frame name='base_link' attached_to='base_lift_joint'>
+        <pose>0 0 0 0 0 0</pose>
+      </frame>
+      <pose>0 0 0 0 0 3.1415000000000002</pose>
+      <static>false</static>
+      <self_collide>false</self_collide>
+    </model>
+    <light name='sun' type='directional'>
+      <pose>0 0 10 0 0 0</pose>
+      <cast_shadows>true</cast_shadows>
+      <intensity>1</intensity>
+      <direction>-0.5 0.10000000000000001 -0.90000000000000002</direction>
+      <diffuse>0.800000012 0.800000012 0.800000012 1</diffuse>
+      <specular>0.200000003 0.200000003 0.200000003 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <linear>0.01</linear>
+        <constant>0.90000000000000002</constant>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <spot>
+        <inner_angle>0</inner_angle>
+        <outer_angle>0</outer_angle>
+        <falloff>0</falloff>
+      </spot>
+    </light>
+  </world>
+</sdf>
