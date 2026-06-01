@@ -53,7 +53,7 @@ source install/setup.bash
 Run one of the launch files included in the package:
 
 ```bash
-ros2 launch system_hss <launch_file>.launch.py
+ros2 launch system_hss last_system_hss.launch.py
 ```
 
 Pick the appropriate file from the `launch/` folder depending on what you want to start (e.g. Gazebo simulation, RViz visualization, or bringing up `ros2_control`).
