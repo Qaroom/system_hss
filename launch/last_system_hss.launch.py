@@ -36,14 +36,14 @@ def generate_launch_description():
         PythonLaunchDescriptionSource(
             [FindPackageShare("ros_gz_sim"), "/launch/gz_sim.launch.py"]
         ),
-        launch_arguments=[("gz_args", f" -r -v 3  {pkg_share}/launch/system_gazebo.sdf")],
+        launch_arguments=[("gz_args", f" -r -v 3  {pkg_share}/models/hss_world_with_drones_1.sdf")],
         condition=IfCondition(gui),
     )
     gazebo_headless = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             [FindPackageShare("ros_gz_sim"), "/launch/gz_sim.launch.py"]
         ),
-        launch_arguments=[("gz_args", [f"--headless-rendering -s -r -v 3 {pkg_share}/launch/system_gazebo.sdf"])],
+        launch_arguments=[("gz_args", [f"--headless-rendering -s -r -v 3 {pkg_share}/models/hss_world_with_drones_1.sdf"])],
         condition=UnlessCondition(gui),
     )
 

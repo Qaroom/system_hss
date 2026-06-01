@@ -407,14 +407,14 @@
         <sensor name="right_camera" type="camera">
          <pose>0 0 0 0 1.57 1.57</pose> <!-- roll pitch yaw -->
             <always_on>true</always_on>
-            <update_rate>60</update_rate>        <!-- FPS -->
+            <update_rate>30</update_rate>        <!-- FPS -->
             <visualize>true</visualize>
             <camera>
             <horizontal_fov>1.047</horizontal_fov> <!-- 60 derece -->
             <image>
-                <width>640</width>
-                <height>480</height>
-                <format>R8G8B8</format>
+              <width>1280</width>
+              <height>720</height>
+              <format>R8G8B8</format>
             </image>
             <clip>
                 <near>0.1</near>
@@ -433,14 +433,14 @@
         <sensor name="left_camera" type="camera">
          <pose>0 0 0 0 1.57 1.57</pose> <!-- roll pitch yaw -->
             <always_on>true</always_on>
-            <update_rate>60</update_rate>        <!-- FPS -->
+            <update_rate>30</update_rate>        <!-- FPS -->
             <visualize>true</visualize>
             <camera>
             <horizontal_fov>1.047</horizontal_fov> <!-- 60 derece -->
             <image>
-                <width>640</width>
-                <height>480</height>
-                <format>R8G8B8</format>
+              <width>1280</width>
+              <height>720</height>
+              <format>R8G8B8</format>
             </image>
             <clip>
                 <near>0.1</near>

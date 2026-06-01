@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<robot name="home" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <!--
+    Hollow square ring (open inside)
+    Outer size: 8.0 x 8.0 m
+    Wall thickness: 0.20 m
+    Height: 1.0 m
+
+    Implementation: single link with four box visuals/collisions positioned
+    to form the ring. Visuals use a semi-transparent orange color.
+  -->
+
+  <link name="hollow_ring_link">
+    <!-- simple inertial for the whole assembly (approximation) -->
+    <inertial>
+      <origin xyz="0 0 0.5" rpy="0 0 0"/>
+      <mass value="50.0"/>
+      <!-- inertia of a 8 x 8 x 1 box approximated for the composite -->
+      <inertia ixx="283.3333" ixy="0.0" ixz="0.0" iyy="283.3333" iyz="0.0" izz="533.3333"/>
+    </inertial>
+
+    <!-- FRONT wall (along X axis, located at +y) -->
+    <visual>
+      <origin xyz="0 3.9 0.5" rpy="0 0 0"/>
+      <geometry>
+        <box size="8.0 0.2 1.0"/>
+      </geometry>
+      <material name="orange_trans">
+        <color rgba="1 0.55 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 3.9 0.5" rpy="0 0 0"/>
+      <geometry>
+        <box size="8.0 0.2 1.0"/>
+      </geometry>
+    </collision>
+
+    <!-- BACK wall (along X axis, located at -y) -->
+    <visual>
+      <origin xyz="0 -3.9 0.5" rpy="0 0 0"/>
+      <geometry>
+        <box size="8.0 0.2 1.0"/>
+      </geometry>
+      <material name="orange_trans"/>
+    </visual>
+    <collision>
+      <origin xyz="0 -3.9 0.5" rpy="0 0 0"/>
+      <geometry>
+        <box size="8.0 0.2 1.0"/>
+      </geometry>
+    </collision>
+
+    <!-- LEFT wall (along Y axis, located at -x) -->
+    <visual>
+      <origin xyz="-3.9 0 0.5" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.2 8.0 1.0"/>
+      </geometry>
+      <material name="orange_trans"/>
+    </visual>
+    <collision>
+      <origin xyz="-3.9 0 0.5" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.2 8.0 1.0"/>
+      </geometry>
+    </collision>
+
+    <!-- RIGHT wall (along Y axis, located at +x) -->
+    <visual>
+      <origin xyz="3.9 0 0.5" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.2 8.0 1.0"/>
+      </geometry>
+      <material name="orange_trans"/>
+    </visual>
+    <collision>
+      <origin xyz="3.9 0 0.5" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.2 8.0 1.0"/>
+      </geometry>
+    </collision>
+
+  </link>
+
+  <link name ="footprint"/>
+  <!-- A fixed joint to attach to world (optional) -->
+  <joint name="hollow_ring_fixed_joint" type="fixed">
+    <parent link="footprint"/>
+    <child link="hollow_ring_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+</robot>

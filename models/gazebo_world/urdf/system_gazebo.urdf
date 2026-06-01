@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="system_gazebo">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="1.2759 0.025585 -0.70821"
+        rpy="0 0 0" />
+      <mass
+        value="5.2" />
+      <inertia
+        ixx="444.9"
+        ixy="0.4984"
+        ixz="0.1211"
+        iyy="1641.6"
+        iyz="-0.22973"
+        izz="2074.8" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/ros2/Desktop/gazebo_world/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.3 0.3 0.3 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/ros2/Desktop/gazebo_world/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="link1">
+    <inertial>
+      <origin
+        xyz="0 0 -0.135"
+        rpy="0 0 0" />
+      <mass
+        value="0.002" />
+      <inertia
+        ixx="0.075131"
+        ixy="0"
+        ixz="0"
+        iyy="0.075131"
+        iyz="0"
+        izz="0.075131" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/ros2/Desktop/gazebo_world/meshes/link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/ros2/Desktop/gazebo_world/meshes/link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint1"
+    type="fixed">
+    <origin
+      xyz="2.6794 0.36723 -0.54975"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link1" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link2">
+    <inertial>
+      <origin
+        xyz="0 1.3878E-17 -0.135"
+        rpy="0 0 0" />
+      <mass
+        value="0.002" />
+      <inertia
+        ixx="0.075131"
+        ixy="2.0811E-34"
+        ixz="0"
+        iyy="0.075131"
+        iyz="0"
+        izz="0.075131" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/ros2/Desktop/gazebo_world/meshes/link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/ros2/Desktop/gazebo_world/meshes/link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint2"
+    type="fixed">
+    <origin
+      xyz="2.2027 0.36723 0.056597"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link2" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link3">
+    <inertial>
+      <origin
+        xyz="4.4409E-16 0 -0.135"
+        rpy="0 0 0" />
+      <mass
+        value="0.002" />
+      <inertia
+        ixx="0.075131"
+        ixy="0"
+        ixz="0"
+        iyy="0.075131"
+        iyz="0"
+        izz="0.075131" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/ros2/Desktop/gazebo_world/meshes/link3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/ros2/Desktop/gazebo_world/meshes/link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="join3"
+    type="fixed">
+    <origin
+      xyz="2.6528 0.36723 0.72795"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link3" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link4">
+    <inertial>
+      <origin
+        xyz="0 2.7756E-17 -0.135"
+        rpy="0 0 0" />
+      <mass
+        value="0.002" />
+      <inertia
+        ixx="0.075131"
+        ixy="0"
+        ixz="0"
+        iyy="0.075131"
+        iyz="0"
+        izz="0.075131" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/ros2/Desktop/gazebo_world/meshes/link4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/ros2/Desktop/gazebo_world/meshes/link4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint4"
+    type="fixed">
+    <origin
+      xyz="1.2714 0.36723 0.14447"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link4" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link5">
+    <inertial>
+      <origin
+        xyz="2.2204E-16 0 -0.135"
+        rpy="0 0 0" />
+      <mass
+        value="0.002" />
+      <inertia
+        ixx="0.075131"
+        ixy="0"
+        ixz="0"
+        iyy="0.075131"
+        iyz="0"
+        izz="0.075131" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/ros2/Desktop/gazebo_world/meshes/link5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/ros2/Desktop/gazebo_world/meshes/link5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint5"
+    type="fixed">
+    <origin
+      xyz="1.1117 0.36723 0.7485"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link5" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link6">
+    <inertial>
+      <origin
+        xyz="0 6.9389E-18 -0.135"
+        rpy="0 0 0" />
+      <mass
+        value="0.002" />
+      <inertia
+        ixx="0.075131"
+        ixy="0"
+        ixz="0"
+        iyy="0.075131"
+        iyz="0"
+        izz="0.075131" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/ros2/Desktop/gazebo_world/meshes/link6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/ros2/Desktop/gazebo_world/meshes/link6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint6"
+    type="fixed">
+    <origin
+      xyz="0.38074 0.36723 0.054885"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link6" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link7">
+    <inertial>
+      <origin
+        xyz="0 0 -0.135"
+        rpy="0 0 0" />
+      <mass
+        value="0.002" />
+      <inertia
+        ixx="0.075131"
+        ixy="0"
+        ixz="0"
+        iyy="0.075131"
+        iyz="0"
+        izz="0.075131" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/ros2/Desktop/gazebo_world/meshes/link7.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/ros2/Desktop/gazebo_world/meshes/link7.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint7"
+    type="fixed">
+    <origin
+      xyz="-0.1266 0.36723 -0.54975"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link7" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link8">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.002" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/ros2/Desktop/gazebo_world/meshes/link8.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/ros2/Desktop/gazebo_world/meshes/link8.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint8"
+    type="fixed">
+    <origin
+      xyz="-0.15321 0.36723 0.72795"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link8" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+
+  <link name="base_lift_link">
+  <!-- Inertial -->
+  <inertial>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <mass value="100.0"/> <!-- kg, uygun değeri değiştirebilirsin -->
+    <inertia 
+      ixx="0.125" ixy="0.0" ixz="0.0"
+      iyy="0.125" iyz="0.0"
+      izz="0.125"/>
+  </inertial>
+
+  <!-- Collision -->
+  <collision name="base_lift_link_collision">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <box size="8 8 0.1"/>
+    </geometry>
+  </collision>
+
+  <!-- Visual -->
+  <visual name="base_lift_link_visual">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <box size="8 8 0.1"/>
+    </geometry>
+    <material name="wood">
+      <color rgba="0.65 0.50 0.39 1"/> <!-- Ahşap rengi -->
+    </material>
+  </visual>
+</link>
+
+  <joint name="base_lift_joint" type="fixed">
+    <parent link="base_lift_link"/>
+    <child link="base_link"/>
+    <origin xyz="-1.5 3 1" rpy="0 0 0"/>
+  </joint>
+</robot>

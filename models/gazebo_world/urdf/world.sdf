@@ -1,0 +1,21 @@
+<sdf version="1.11">
+  <world name="empty_world">
+    <!-- Yerçekimi -->
+    <gravity>0 0 -9.81</gravity>
+
+    <!-- Işık -->
+<include>
+  <uri>file:///usr/share/gazebo-11/models/sun/model.sdf</uri>
+</include>
+<include>
+  <uri>file:///usr/share/gazebo-11/models/ground_plane/model.sdf</uri>
+</include>
+
+    <!-- Modeli absolute path ile ekle -->
+    <include>
+      <uri>file:///home/ros2/Desktop/gazebo_world/urdf/system_gazebo.sdf</uri>
+      <!-- <pose>0 0 0 0 0 0</pose>  -->
+    </include>
+
+  </world>
+</sdf>
